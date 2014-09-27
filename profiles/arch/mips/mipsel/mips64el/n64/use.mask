@@ -1,0 +1,6 @@
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+# Michał Górny <mgorny@gentoo.org> (30 Jun 2014)
+# Unmask the matching multilib flag.
+-abi_mips_n64

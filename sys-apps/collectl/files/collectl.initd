@@ -1,0 +1,28 @@
+#!/sbin/runscript
+# Copyright 1999-2007 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+opts="flush"
+
+pidfile="/var/run/collectl.pid"
+
+start() {
+	ebegin "Starting collectl"
+	start-stop-daemon \
+		--start \
+		--pidfile ${pidfile} \
+		--exec /usr/bin/collectl -- -D
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping collectl"
+	start-stop-daemon --stop --pidfile ${pidfile}
+	eend $?
+}
+
+flush() {
+	einfo "Flushing collectl buffers"
+	start-stop-daemon --oknodo --stop --signal USR1 --pidfile ${pidfile}
+	eend $?
+}

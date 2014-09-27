@@ -1,0 +1,10 @@
+
+--- libmath-spline-perl-0.01.orig/Spline.pm
++++ libmath-spline-perl-0.01/Spline.pm
+@@ -1,4 +1,5 @@
+ # $Id$
++
+ =head1 NAME
+ 
+     Math::Spline  - Cubic Spline Interpolation of data
+

@@ -1,0 +1,10 @@
+# Copyright 1999-2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+# sys-kernel/genkernel is not compatible with Systemd, you need
+# to use sys-kernel/genkernel-next instead
+sys-kernel/genkernel
+
+# Rick Farina <zerochaos@gentoo.org> (6 Jun 2014)
+# remove mask from base
+-<sys-power/upower-0.99.0

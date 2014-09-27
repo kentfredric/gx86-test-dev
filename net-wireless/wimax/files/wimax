@@ -1,0 +1,23 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+description="WiMAX Network Service"
+
+depend() {
+	need localmount
+	after bootmisc
+}
+
+start() {
+	ebegin "Starting WiMAX Network Service"
+	[ -e /var/run/wimaxd.wmx0.pid ] && rm -f /var/run/wimaxd.wmx0.pid
+	start-stop-daemon --start --quiet --pidfile /var/run/wimaxd.wmx0.pid --exec /usr/bin/wimaxd -- -b
+	eend $?
+}
+
+stop() {
+	ebegin "Stoping WiMAX Network Service"
+	start-stop-daemon --stop --quiet --pidfile /var/run/wimaxd.wmx0.pid
+	eend $?
+}

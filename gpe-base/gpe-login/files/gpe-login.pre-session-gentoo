@@ -1,0 +1,9 @@
+#!/bin/sh
+# /etc/X11/gpe-login.pre-session: This is executed before Xsession.
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# Angelo Arrifano <miknix@gentoo.org>
+
+USER=$1
+
+

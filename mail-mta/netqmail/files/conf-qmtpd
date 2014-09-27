@@ -1,0 +1,14 @@
+# Configuration file for qmail-qmtpd
+
+# For more information on making your servers talk QMTP
+# see http://cr.yp.to/im/mxps.html
+
+# Stuff to run before tcpserver
+#QMAIL_TCPSERVER_PRE=""
+# Stuff to run qmail-qmtpd
+#QMAIL_QMTP_PRE=""
+# Stuff to after qmail-qmtpd
+#QMAIL_QMTP_POST=""
+
+# I don't trust /etc/services to have obscure ports
+TCPSERVER_PORT=209

@@ -1,0 +1,44 @@
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI="2"
+
+inherit eutils toolchain-funcs
+
+DESCRIPTION="A suite of algorithms for ecological bioinformatics"
+HOMEPAGE="http://www.mothur.org/"
+SRC_URI="mirror://gentoo/${P}.zip"
+
+LICENSE="GPL-3"
+SLOT="0"
+IUSE="mpi +readline"
+KEYWORDS="~amd64 ~x86"
+
+DEPEND="${RDEPEND}
+	app-arch/unzip"
+RDEPEND="mpi? ( virtual/mpi )"
+
+S=${WORKDIR}/Mothur.source
+
+pkg_setup() {
+	use mpi && CXX=mpicxx || CXX=$(tc-getCXX)
+}
+
+src_prepare() {
+	epatch \
+		"${FILESDIR}"/${P}-makefile.patch \
+		"${FILESDIR}"/${P}-overflows.patch \
+		"${FILESDIR}"/${P}-overflows2.patch
+}
+
+use_yn() {
+	use $1 && echo "yes" || echo "no"
+}
+
+src_compile() {
+	emake USEMPI=$(use_yn mpi) USEREADLINE=$(use_yn readline) || die
+}
+
+src_install() {
+	dobin ${PN}
+}

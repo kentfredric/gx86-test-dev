@@ -1,0 +1,10 @@
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+# Re-add linux stuff that is masked in base/
+-elibc_glibc
+-kernel_linux
+#
+
+# Re-add acl, as it does work in prefixed Linux (if the host kernel supports it)
+-acl

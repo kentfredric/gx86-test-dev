@@ -1,0 +1,5 @@
+# Configuration file for qmail-send
+
+# directory to log to
+# override conf-common on this
+LOG_DEST=/var/log/qmail/qmail-send

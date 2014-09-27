@@ -1,0 +1,6 @@
+# Copyright 1999-2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+# Saleem Abdulrasool <compnerd@gentoo.org> (23 Nov 2007)
+# Unmask when we get HAL 0.5.10 straightened out
+media-sound/pulseaudio policykit

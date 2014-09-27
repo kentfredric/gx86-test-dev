@@ -1,0 +1,11 @@
+#!/bin/sh
+# /etc/X11/gpe-dm/Xinit: Launch stuff after the Xserver is up.
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# Angelo Arrifano <miknix@gentoo.org>
+# Modified from gpe xserver-common
+
+# Please, make sure profile sets a proper PATH before filling a bug.
+. /etc/profile
+
+exec run-parts /etc/X11/gpe-dm/Xinit.d

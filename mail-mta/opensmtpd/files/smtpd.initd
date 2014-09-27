@@ -1,0 +1,16 @@
+#!/sbin/runscript
+# Copyright 1999-2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+command="smtpd"
+start_stop_daemon_args="--pidfile=/var/run/smtpd.pid"
+description="SMTP daemon from OpenBSD"
+
+depend() {
+	need net
+}
+stop() {
+	ebegin "Stopping smtpd"
+	smtpctl stop
+	eend $?
+}

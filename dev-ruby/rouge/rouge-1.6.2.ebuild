@@ -1,0 +1,26 @@
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=5
+USE_RUBY="ruby19 ruby20"
+
+RUBY_FAKEGEM_EXTRADOC="README.md CHANGELOG.md"
+RUBY_FAKEGEM_TASK_TEST="spec"
+RUBY_FAKEGEM_RECIPE_DOC="yard"
+
+inherit ruby-fakegem
+
+DESCRIPTION="Yet-another-markdown-parser but fast, pure Ruby, using a strict syntax definition"
+HOMEPAGE="http://github.com/jayferd/rouge"
+SRC_URI="https://github.com/jayferd/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+
+LICENSE="MIT"
+
+SLOT="0"
+KEYWORDS="~amd64 ~arm ~x86"
+IUSE=""
+
+ruby_add_rdepend "dev-ruby/redcarpet"
+
+RESTRICT="test"
+# Depends on dev-ruby/wrong, which is not packaged yet.

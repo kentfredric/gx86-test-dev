@@ -1,0 +1,26 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License, v2
+
+depend() {
+	need localmount
+	use portmap
+}
+
+start() {
+	if [ "${RUN_QUOTACHECK}" = "yes" ] ; then
+		ebegin "Checking quotas (may take a while)"
+		/usr/sbin/quotacheck ${QUOTACHECK_OPTS}
+		eend $?
+	fi
+
+	ebegin "Starting quota"
+	/usr/sbin/quotaon ${QUOTAON_OPTS}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping quota"
+	/usr/sbin/quotaoff ${QUOTAOFF_OPTS}
+	eend $?
+}

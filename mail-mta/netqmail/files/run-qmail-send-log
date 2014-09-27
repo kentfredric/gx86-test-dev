@@ -1,0 +1,6 @@
+#!/bin/bash
+# Gentoo Startup script for qmail's send daemon (logging)
+
+SERVICE=send
+. /var/qmail/bin/qmail-config-system && \
+eval exec /usr/bin/setuidgid qmaill /usr/bin/multilog ${LOG_OPTS} ${LOG_DEST}

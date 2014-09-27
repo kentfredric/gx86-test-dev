@@ -1,0 +1,5 @@
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+# need GNU as on HP-UX
+*sys-devel/binutils

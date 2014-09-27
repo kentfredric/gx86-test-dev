@@ -1,0 +1,12 @@
+Index: libhome-0.10.2/hldap.c
+===================================================================
+--- libhome-0.10.2.orig/hldap.c
++++ libhome-0.10.2/hldap.c
+@@ -27,6 +27,7 @@ static char const rcsid[] UNUSED =
+ "$Id$";
+ 
+ #define passwd system_passwd
++#define LDAP_DEPRECATED 1
+ #include <lber.h>  /* for openldap 1.x */
+ #include <ldap.h>
+ #include <errno.h>

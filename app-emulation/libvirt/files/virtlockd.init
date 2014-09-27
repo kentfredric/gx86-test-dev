@@ -1,0 +1,12 @@
+#!/sbin/runscript
+# Copyright 1999-2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+description="libvirt virtual machine lock manager"
+command="/usr/sbin/virtlockd"
+command_args="-d"
+pidfile="/var/run/virtlockd.pid"
+
+depend() {
+    after ntp-client ntpd nfs nfsmount corosync
+}

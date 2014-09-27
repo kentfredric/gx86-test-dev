@@ -1,0 +1,6 @@
+# Copyright 1999-2014 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+# Fabian Groffen <grobian@gentoo.org> (Jul 24, 2014)
+# dmarc needs mail-filter/opendmarc, bug #489676
+mail-mta/exim dmarc

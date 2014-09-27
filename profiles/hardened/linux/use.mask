@@ -1,0 +1,15 @@
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+-hardened
+
+emul-linux-x86
+
+# tcc is x86-only
+tcc
+
+# precompiled headers are not compat with ASLR.
+pch
+
+# prelink is masked for hardened
+prelink

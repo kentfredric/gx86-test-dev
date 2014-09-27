@@ -1,0 +1,5 @@
+#!/bin/sh
+# Init script for qmail-send
+# Copied from LWQ
+exec env - PATH="/var/qmail/bin:$PATH" \
+	qmail-start "`cat /var/qmail/control/defaultdelivery`"

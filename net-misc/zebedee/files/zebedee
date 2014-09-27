@@ -1,0 +1,29 @@
+#!/sbin/runscript
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+	need net
+	use dns logger
+}
+
+start() {
+	ebegin "Starting Zebedee"
+	start-stop-daemon --start --startas /usr/bin/zebedee \
+		-m -b -p /var/run/zebedee.pid \
+		-- -f /etc/zebedee/server.zbd
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping Zebedee"
+	start-stop-daemon --stop -p /var/run/zebedee.pid
+	eend $? 
+}
+
+restart() {
+	ebegin "Restarting Zebedee"
+	svc_stop
+	svc_start
+	eend $? 
+}

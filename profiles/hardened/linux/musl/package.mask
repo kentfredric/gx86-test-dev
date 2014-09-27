@@ -1,0 +1,12 @@
+# Copyright 1999-2014 Gentoo Foundation.
+# Distributed under the terms of the GNU General Public License v2
+
+sys-libs/uclibc
+sys-libs/glibc
+
+# We use eudev which is tested on both uclibc and musl
+sys-apps/systemd
+sys-fs/udev
+#
+dev-libs/elfutils
+sys-libs/pam

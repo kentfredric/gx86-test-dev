@@ -1,0 +1,2 @@
+# You need to uncomment this after you have an API key and the cronjob is active!
+#loadplugin  Mail::SpamAssassin::Plugin::GoogleSafeBrowsing

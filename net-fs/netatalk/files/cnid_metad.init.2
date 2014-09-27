@@ -1,0 +1,14 @@
+#!/sbin/runscript
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+: ${CNID_CONFIG:=-l log_note}
+
+command="/usr/sbin/${SVCNAME}"
+command_args="${CNID_CONFIG}"
+pidfile="/var/run/${SVCNAME}.pid"
+
+depend() {
+	need net
+    use logger
+}

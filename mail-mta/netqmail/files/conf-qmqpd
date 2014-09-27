@@ -1,0 +1,11 @@
+# Configuration file for qmail-qmqpd
+
+# Stuff to run before tcpserver
+#QMAIL_TCPSERVER_PRE=""
+# Stuff to run qmail-qmqpd
+#QMAIL_QMQP_PRE=""
+# Stuff to after qmail-qmqpd
+#QMAIL_QMQP_POST=""
+
+# I don't trust /etc/services to have obscure ports
+TCPSERVER_PORT=628
